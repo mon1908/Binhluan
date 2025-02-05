@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bình luận và Đánh giá sao</title>
+   <style>body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f9f9f9;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+.summary {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 18px;
+    color: #333;
+}
+
+.comment-form label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+.comment-form input, 
+.comment-form textarea, 
+.comment-form button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+textarea {
+    resize: none;
+    height: 80px;
+}
+
+.stars {
+    display: flex;
+    margin: 10px 0;
+    cursor: pointer;
+}
+
+.star {
+    font-size: 24px;
+    color: gray;
+    margin-right: 5px;
+    transition: color 0.3s;
+}
+
+.star.selected {
+    color: gold;
+}
+
+.comments ul {
+    list-style: none;
+    padding: 0;
+}
+
+.comments li {
+    background: #f1f1f1;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.comment-name {
+    font-weight: bold;
+}
+
+.comment-text {
+    margin: 5px 0;
+}
+
+.comment-stars {
+    color: gold;
+    font-size: 16px;
+}</style>
+</head>
+<body>
+    <div class="container">
+        <h1>Bình luận và Đánh giá</h1>
+        <div class="summary">
+            <p>Số bình luận: <span id="total-comments">0</span></p>
+            <p>Đánh giá trung bình: <span id="average-rating">0</span> ★</p>
+        </div>
+        <form class="comment-form">
+            <label for="name">Tên:</label>
+            <input type="text" id="name" placeholder="Nhập tên của bạn" required>
+
+            <label for="comment">Bình luận:</label>
+            <textarea id="comment" placeholder="Nhập bình luận của bạn" required></textarea>
+
+            <label>Đánh giá:</label>
+            <div class="stars" id="stars">
+                <span class="star" data-value="1">★</span>
+                <span class="star" data-value="2">★</span>
+                <span class="star" data-value="3">★</span>
+                <span class="star" data-value="4">★</span>
+                <span class="star" data-value="5">★</span>
+            </div>
+
+            <button type="button" id="submit">Gửi</button>
+        </form>
+
+        <div class="comments">
+            <h2>Các bình luận</h2>
+            <ul id="comment-list"></ul>
+        </div>
+    </div>
+    <script src="blvdg.js"></script>
+</body>
+</html>
